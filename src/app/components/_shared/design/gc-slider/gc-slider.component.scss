@@ -1,0 +1,17 @@
+.slider {
+    background-color: var(--amarillo-solar);
+    color: var(--negro-universo);
+    padding: 0px 10px;
+    font-size: 12px;
+    border-radius: 25px;
+    height: 25px;
+    margin: 0 auto;
+    max-width: 99px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+.slider.up {
+    position: relative;
+    bottom: 40px;
+}

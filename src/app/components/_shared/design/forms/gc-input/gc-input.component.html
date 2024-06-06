@@ -1,0 +1,19 @@
+<p *ngIf="label.length" class="label" [ngClass]="[size]">{{ label }}</p>
+<mat-form-field [ngClass]="[size]">
+    <input
+        style="font-family: 'FKCuervaGrotesk' !important"
+        matInput
+        [type]="password != undefined ? 'password' : number != undefined ? 'number' : 'text'"
+        [attr.autocomplete]="autocomplete != undefined ? 'on' : 'off'"
+        [attr.name]="label"
+        [attr.aria-label]="label"
+        [placeholder]="placeholder"
+        [required]="required != undefined"
+        [formControl]="getControl()"
+        [readonly]="readonly"
+        [step]="number ? '0.01' : '0'" />
+    <gc-icon [size]="size" matSuffix *ngIf="icon && iconPosition === 'after'">{{ icon }}</gc-icon>
+    <gc-icon [size]="size" matPrefix *ngIf="icon && iconPosition === 'before'">{{ icon }}</gc-icon>
+    <mat-error *ngFor="let error of formErrors()"> {{ errors.get(error) ?? 'Error desconocido' }}</mat-error>
+    <mat-hint *ngIf="hint !== undefined">{{ hint }}</mat-hint>
+</mat-form-field>

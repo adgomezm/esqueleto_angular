@@ -1,0 +1,27 @@
+<div class="gc-card">
+    <h3 *ngIf="title != undefined" class="gc-card-title">
+        {{ title }}
+        <div>
+            <gc-icon
+                *ngIf="button2 != undefined && btnClick2 != undefined"
+                size="small"
+                (click)="btnClick2()"
+                style="cursor: pointer"
+                semialigned
+                bold
+                >{{ button2 }}</gc-icon
+            >
+            <gc-icon
+                *ngIf="button != undefined && btnClick != undefined"
+                size="small"
+                (click)="btnClick()"
+                style="cursor: pointer"
+                semialigned
+                bold
+                >{{ button }}</gc-icon
+            >
+        </div>
+    </h3>
+    {{ message }}
+    <ng-content></ng-content>
+</div>

@@ -1,0 +1,32 @@
+<p *ngIf="label.length" class="label" style="text-align: left; margin-bottom: 5px">
+    {{ label }}
+</p>
+<mat-form-field style="width: 100%" [ngClass]="size">
+    <input
+        matInput
+        style="font-family: 'FKCuervaGrotesk' !important"
+        [matDatepicker]="picker"
+        [placeholder]="placeholder"
+        [formControl]="getControl()"
+        [max]="max"
+        [min]="min" />
+    <gc-button
+        *ngIf="iconPosition === 'after'"
+        matSuffix
+        type="icon"
+        icon="calendar_month"
+        size="small"
+        color="light"
+        (click)="toggle()" />
+    <gc-button
+        *ngIf="iconPosition === 'before'"
+        matPrefix
+        type="icon"
+        icon="calendar_month"
+        size="small"
+        color="light"
+        (click)="toggle()" />
+    <!-- <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle> -->
+    <mat-datepicker #picker></mat-datepicker>
+    <mat-error *ngFor="let error of formErrors()"> {{ errors.get(error) ?? 'Error desconocido' }}</mat-error>
+</mat-form-field>

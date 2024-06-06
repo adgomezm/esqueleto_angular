@@ -1,0 +1,19 @@
+.gc-card {
+    border-radius: 4px;
+    padding: 5px 10px;
+    padding-bottom: 10px;
+    margin: 5px 0px;
+    background: #fafafa;
+    font-size: 12px;
+    height: calc(100% - 25px);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.gc-card-title {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 0px;
+    color: var(--negro-universo);
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,0 +1,5 @@
+<div class="slider" [ngClass]="[relativeUp != undefined ? 'up' : '']">
+    <gc-icon style="float: left; cursor: pointer" (click)="backward()">chevron_left</gc-icon>
+    <span> {{ page }} / {{ pages }} </span>
+    <gc-icon style="float: right; cursor: pointer" (click)="forward()">chevron_right</gc-icon>
+</div>

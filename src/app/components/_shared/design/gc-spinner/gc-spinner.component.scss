@@ -1,0 +1,85 @@
+.spinner {
+    font-family: 'FKCuervaGrotesk';
+    display: inline-block;
+    animation: spin 1s ease-in-out infinite;
+    text-align: center;
+    overflow: hidden;
+}
+.spinner.dark {
+    color: #fff;
+}
+.spinner.light {
+    filter: brightness(0) saturate(100%) invert(5%) sepia(8%) saturate(5083%) hue-rotate(219deg) brightness(98%)
+        contrast(97%);
+}
+.spinner.large {
+    font-size: 90px;
+    width: 50px;
+    height: 50px;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    margin: 15px auto;
+    text-align: center;
+    justify-content: center;
+}
+
+.spinner.small {
+    font-size: 48px;
+    width: 24px;
+    height: 24px;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+p.label {
+    margin: 0 auto;
+    text-align: center;
+    animation: blink 1s linear infinite;
+}
+p.label.large {
+    font-size: 16px;
+}
+p.label.small {
+    text-decoration: underline;
+}
+p.label.dark {
+    color: #fff;
+}
+p.label.light {
+    color: var(--negro-universo);
+}
+
+@keyframes spin {
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes spin {
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes blink {
+    0.00% {
+        opacity: 1;
+    }
+    50.00% {
+        opacity: 0.4;
+    }
+    100.00% {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes blink {
+    0.00% {
+        opacity: 1;
+    }
+    50.00% {
+        opacity: 0.4;
+    }
+    100.00% {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,43 @@
+<div
+    class="cuerva-card"
+    [ngClass]="fileClass"
+    style="min-height: 120px; cursor: default"
+    (click)="open_file_picker(fileClass)"
+    DragAndDrop>
+    <h3 [ngClass]="fileClass" class="input-title" *ngIf="label">
+        {{ label }}
+        <gc-button
+            [ngClass]="fileClass"
+            type="icon"
+            icon="delete"
+            *ngIf="ficheros.length"
+            stylesBtn="float: right"
+            size="small"
+            (click)="clear_fotos($event)"
+            semialigned
+            [ngClass]="fileClass" />
+    </h3>
+    <div [ngClass]="fileClass" style="cursor: default">
+        <p *ngIf="!ficheros.length" style="display: block; font-size: 12px" [ngClass]="fileClass">
+            {{
+                multiple !== undefined
+                    ? 'Pulsa o arrastra los ficheros que quieras subir'
+                    : 'Pulsa o arrastra el fichero que quieras subir'
+            }}
+        </p>
+        <p
+            *ngFor="let fichero of ficheros"
+            style="margin-right: 15px; margin-top: 0px; margin-bottom: 0px"
+            [ngClass]="fileClass">
+            {{ fichero.name }}
+        </p>
+    </div>
+    <input
+        type="file"
+        accept=".pdf"
+        [attr.id]="fileClass"
+        style="display: none"
+        [attr.multiple]="multiple"
+        (change)="file_selected($event)"
+        class="drag-confirm-dialog" />
+</div>

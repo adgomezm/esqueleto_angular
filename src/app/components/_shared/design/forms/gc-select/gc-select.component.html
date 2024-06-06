@@ -1,0 +1,24 @@
+<p *ngIf="label.length" class="label" [ngClass]="size">{{ label }}</p>
+<mat-form-field style="width: 100%">
+    <mat-select
+        [ngClass]="size"
+        [formControl]="getControl()"
+        [placeholder]="placeholder"
+        (selectionChange)="selectionChange.emit(control.value)"
+        [multiple]="multiple">
+        <mat-option>
+            <ngx-mat-select-search
+                placeholderLabel="Buscar"
+                [formControl]="searchForm"
+                noEntriesFoundLabel="No se encontraron resultados"></ngx-mat-select-search>
+        </mat-option>
+        <mat-option *ngIf="multiple == false" [value]="null">Seleccione un valor</mat-option>
+        <mat-option
+            style="font-family: 'FKCuervaGrotesk' !important"
+            *ngFor="let option of optionsFiltered | async"
+            [value]="displayValue(option)">
+            {{ displayName(option) }}
+        </mat-option>
+    </mat-select>
+    <mat-error *ngFor="let error of formErrors()"> {{ errors.get(error) ?? 'Error desconocido' }}</mat-error>
+</mat-form-field>

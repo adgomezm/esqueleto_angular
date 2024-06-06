@@ -1,0 +1,7 @@
+<p class="label" *ngIf="label != undefined" [ngClass]="[size]">{{ label }}</p>
+<span class="toggle" *ngIf="disabled == undefined" [ngClass]="[status, size]" (click)="disabled === undefined && click()">
+    <span class="dot"></span>
+</span>
+<span class="toggle disabled" [ngClass]="[size]" *ngIf="disabled != undefined">
+    <span class="dot"></span>
+</span>

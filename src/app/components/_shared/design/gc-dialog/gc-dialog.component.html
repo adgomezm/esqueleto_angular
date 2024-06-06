@@ -1,0 +1,14 @@
+<div class="dialog" [attr.id]="'dialog_' + title?.replaceAll(' ', '')">
+    <h1 *ngIf="title != undefined" mat-dialog-title class="dialog-title">
+        <div style="width: 70%; display: flex; justify-content: center; align-items: center; flex-direction: column">
+            {{ title }}
+            <hr style="width: 50%; margin: 0 auto" />
+        </div>
+
+        <gc-button style="float: right" type="icon" size="small" icon="close" (click)="close()" aligned />
+    </h1>
+
+    <div mat-dialog-content style="max-height: 90vh !important; overflow-x: hidden">
+        <ng-content></ng-content>
+    </div>
+</div>

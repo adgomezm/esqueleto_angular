@@ -1,0 +1,8 @@
+<span *ngIf="size === 'large'">
+    <img class="spinner" src="./../../../../../assets/img/logo.png" [ngClass]="[size, color]" />
+    <p class="label" [ngClass]="[size, color]" *ngIf="label != undefined">{{ label }}</p>
+</span>
+<div *ngIf="size === 'small'" style="display: flex; align-items: center">
+    <img class="spinner" src="./../../../../../assets/img/logo.png" [ngClass]="[size, color]" />
+    <p class="label" [ngClass]="[size, color]" *ngIf="label != undefined">{{ label }}</p>
+</div>

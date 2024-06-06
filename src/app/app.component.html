@@ -1,0 +1,15 @@
+@if(storage.AppLoading | async){
+  <irm-loading />
+}
+@else {
+  @if(get_url().includes('/login')){
+    <irm-login />
+  }
+  @else {
+    <irm-toolbar />
+    <irm-sidenav />
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+  }
+}

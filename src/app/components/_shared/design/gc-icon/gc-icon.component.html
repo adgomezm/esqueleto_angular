@@ -1,0 +1,11 @@
+<span
+    class="material-symbols-outlined"
+    [ngClass]="[
+        semialigned != undefined ? 'semi' : '',
+        aligned != undefined ? 'aligned' : '',
+        size,
+        bold != undefined ? 'bold' : ''
+    ]"
+    style="transform: inherit">
+    <ng-content></ng-content>
+</span>

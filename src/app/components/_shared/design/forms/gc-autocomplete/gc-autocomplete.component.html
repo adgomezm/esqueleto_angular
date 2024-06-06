@@ -1,0 +1,19 @@
+<p *ngIf="label.length" class="label" [ngClass]="[size]">{{ label }}</p>
+<mat-form-field style="width: 100%">
+    <input type="text" [placeholder]="placeholder" matInput [formControl]="getControl()" [matAutocomplete]="auto" />
+    <gc-icon matSuffix *ngIf="icon && iconPosition === 'after'">{{ icon }}</gc-icon>
+    <gc-icon matPrefix *ngIf="icon && iconPosition === 'before'">{{ icon }}</gc-icon>
+
+    <!-- <mat-error
+    *ngIf="!optionsFiltered.length || !(options ?? []).includes(getControl().value)">
+    El valor debe ser uno de la lista
+  </mat-error> -->
+    <mat-error *ngFor="let error of formErrors()"> {{ errors.get(error) ?? 'Error desconocido' }}</mat-error>
+    <mat-hint *ngIf="hint !== undefined">{{ hint }}</mat-hint>
+
+    <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of optionsFiltered" [value]="option">
+            {{ option }}
+        </mat-option>
+    </mat-autocomplete>
+</mat-form-field>

@@ -1,0 +1,21 @@
+<span
+    class="gc_button"
+    [ngClass]="[color, size, disabled === undefined ? '' : 'disabled', type, bold === undefined ? '' : 'bold']"
+    (click)="this.clicked.emit($event)">
+    <gc-icon
+        *ngIf="icon && iconPosition === 'left' && type === 'primary'"
+        aligned
+        [attr.style]="'margin-right: 5px; ' + (stylesBtn ?? '')"
+        >{{ icon }}</gc-icon
+    >
+    <ng-content *ngIf="type === 'primary'"></ng-content>
+    <gc-icon
+        *ngIf="icon && iconPosition === 'right' && type === 'primary'"
+        aligned
+        [attr.style]="'margin-left: 5px; ' + (stylesBtn ?? '')"
+        >{{ icon }}</gc-icon
+    >
+    <gc-icon *ngIf="type === 'icon'" [aligned]="aligned" [semialigned]="semialigned" [attr.style]="stylesBtn ?? ''">{{
+        icon
+    }}</gc-icon>
+</span>

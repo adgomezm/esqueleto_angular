@@ -1,0 +1,84 @@
+.gc_button {
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 300 !important;
+}
+
+.gc_button.light {
+    color: #fff;
+}
+
+.gc_button.dark {
+    color: var(--negro-universo);
+}
+
+.gc_button.large {
+    font-size: 1.2rem;
+}
+
+.gc_button.small {
+    font-size: 0.8rem;
+}
+
+.gc_button:not(.disabled):hover {
+    color: var(--gris-disabled) !important;
+}
+
+.gc_button.disabled,
+.gc_button[disabled] {
+    color: var(--gris-disabled) !important;
+    cursor: default;
+    pointer-events: none;
+}
+
+.gc_button.icon {
+    border-radius: 100px;
+    display: inline-grid;
+    text-decoration: none;
+    text-align: center;
+    aspect-ratio: 1;
+    align-items: center;
+}
+
+.gc_button.icon.large {
+    padding: 5px;
+    height: 48px !important;
+    width: 48px !important;
+}
+
+.gc_button.icon.small {
+    padding: 2px;
+    height: 32px !important;
+    width: 32px !important;
+}
+
+.gc_button.icon.light {
+    color: var(--negro-universo);
+}
+
+.gc_button.icon.light:not(.disabled):hover {
+    background-color: #89878f;
+    color: var(--negro-universo) !important;
+}
+
+.gc_button.icon.dark:not(.disabled):hover {
+    background-color: #3a3448;
+    color: #fff !important;
+}
+
+.gc_button.icon.disabled {
+    color: #d5d5d5 !important;
+}
+
+.gc_button.icon.dark.disabled {
+    background-color: #3a3448 !important;
+}
+
+.gc_button.icon.dark {
+    color: #fff;
+    background-color: var(--negro-universo);
+}
+
+.gc_button.bold {
+    font-weight: bold !important;
+}
